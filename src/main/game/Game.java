@@ -9,19 +9,23 @@ import java.nio.file.Paths;
 
 public class Game implements Route {
 
+	private String args;
 
-	public void defaultMsg() {
 
-		String data;
+	public String getMsg(String address) {
+
+
 
 		try {
-			data = new String(Files.readAllBytes(Paths.get(defaultName)));
-			System.out.println(data);
+			args = new String(Files.readAllBytes(Paths.get(address)));
+			System.out.println(args);
 
 		} catch (Exception e) {
 			System.out.println("직접 오류를 고치시오\r\n" + e);
 
 		}
+
+		return args;
 
 
 
@@ -35,15 +39,27 @@ public class Game implements Route {
 
 
 		init();
-		loop();
+		show();
 
 		//(This part determines terminate this window, 'll be automatically closed.)
 	}
 
 	public void init() {
 
-		defaultMsg();
 
+
+
+
+
+
+
+	}
+
+	public void show() {
+		
+		System.out.println("시작");
+
+		System.out.println(getMsg(defaultName));
 
 
 
@@ -53,6 +69,8 @@ public class Game implements Route {
 
 	public void loop() {
 
+		System.out.println(getMsg("src/main/data/World/Info"));
+		// get Custom Message from map
 
 
 	}
