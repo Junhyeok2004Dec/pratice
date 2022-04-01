@@ -42,7 +42,6 @@ public class Data {
 	}
 
 
-
 	public void DataSplit(String filepath, int type) {
 
 		try {
@@ -56,9 +55,23 @@ public class Data {
 
 			switch(type) {
 
+				/*
+
+
+				case 0
+
+
+				플레이어 : 0에 매칭
+
+				월드맵 : 1에 매칭
+
+
+				 */
 				case 0: {
 
-					userData(Integer.parseInt(dataStrArr[0]), )
+
+
+					
 
 
 //Todo :: userData 함수 Player.java에 구현
