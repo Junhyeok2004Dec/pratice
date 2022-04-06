@@ -1,9 +1,11 @@
 package main.game;
 
 import assets.Route;
+import main.Tools;
 import main.data.Data;
 
 import java.io.File;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -14,18 +16,22 @@ public class Game implements Route {
 
 	public String getMsg(String address) {
 
-
+		Tools tools = new Tools();
+		tools.ClearConsole();
 
 		try {
-			args = new String(Files.readAllBytes(Paths.get(address)));
-			System.out.println(args);
+
+
+			args = new String(Files.readAllBytes(Paths.get(address)), StandardCharsets.UTF_8);
+			return args;
 
 		} catch (Exception e) {
 			System.out.println("직접 오류를 고치시오\r\n" + e);
+			return "err" + e;
 
 		}
 
-		return args;
+
 
 
 
@@ -57,10 +63,9 @@ public class Game implements Route {
 
 	public void show() {
 		
-		System.out.println("시작");
+		System.out.println("ㅏㅜㅑㅜㅑ");
 
 		System.out.println(getMsg(defaultName));
-
 
 
 
