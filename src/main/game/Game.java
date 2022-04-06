@@ -4,7 +4,11 @@ import assets.Route;
 import main.Tools;
 import main.data.Data;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.nio.Buffer;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -16,13 +20,18 @@ public class Game implements Route {
 
 	public String getMsg(String address) {
 
+
+		String[] totalSTring;
+
 		Tools tools = new Tools();
 		tools.ClearConsole();
 
 		try {
 
 
-			args = new String(Files.readAllBytes(Paths.get(address)), StandardCharsets.UTF_8);
+			BufferedReader bf = new BufferedReader(new FileReader(address));
+
+			args = String.valueOf(bf.readLine());
 			return args;
 
 		} catch (Exception e) {
@@ -63,7 +72,7 @@ public class Game implements Route {
 
 	public void show() {
 		
-		System.out.println("ㅏㅜㅑㅜㅑ");
+		System.out.println("this.valueof");
 
 		System.out.println(getMsg(defaultName));
 

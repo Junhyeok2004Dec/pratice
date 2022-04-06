@@ -9,5 +9,3 @@
 3. Option
 4. Info
 5. Exit
-
-시발
